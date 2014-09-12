@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DelayedImage Demo - jQuery</title>
+	<style>
+	body{
+		font-family: Calibri, Helvetica, sans-serif;
+		font-size: 14px;
+		color: #222;
+	}
+	#wrapper{
+		width: 1000px;
+		margin: 0 auto;
+		padding: 15px;
+		background-color: #eee;
+	}
+	@media(max-width: 1000px){
+		#wrapper{
+			width: 100%;
+			padding: 7px;
+		}
+	}
+	h2 > small {
+		color: #888;
+	}
+	.i-am-hidden, .i-will-always-be-hidden{
+		display: none;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>DelayedImage Demo - jQuery</h1>
+		<div class="delayed-image">
+			<h2>Automatic Display</h2>
+			<img data-delayed-image="images/one.png" alt="I am an image!" />
+			<img data-delayed-image="images/two.png" alt="I am an image!" />
+			<img data-delayed-image="images/three.png" alt="I am an image!" />
+		</div>
+		<div class="some-class">
+			<h2>Configured Display <small>(2-second delay)</small></h2>
+			<div class="i-am-hidden">
+				<img data-sauce="images/four.png" alt="I am an image!" />
+				<img data-sauce="images/five.png" alt="I am an image!" />
+				<img data-sauce="images/six.png" alt="I am an image!" />
+				<div class="i-will-always-be-hidden">
+					<h2>Always Hidden <small>(displayed so you can see the image isn't loaded)</small></h2>
+					<img data-sauce="images/seven.png" alt="I am an image!" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../source/jquery.delayedimage.js"></script>
+	<script type="text/javascript">
+	if( "jquery" == window.di_mode ){
+		// Automatic Display
+		$( '.delayed-image' ).delayed();
+
+		// Configured Display
+		$( '.i-am-hidden' ).delayed( {
+			imgSrc: "data-sauce",
+			ignore: ".i-will-always-be-hidden"
+		} );
+		setTimeout( function(){
+			document.querySelector( '.i-am-hidden' ).setAttribute( 'style', 'display: block;' );
+			document.querySelector( '.i-will-always-be-hidden' ).setAttribute( 'style', 'display: block;' );
+			$( '.i-am-hidden' ).delayed( {
+				imgSrc: "data-sauce",
+				ignore: ".i-will-always-be-hidden"
+			} );
+		}, 2000 );
+	}
+	</script>
+</body>
+</html>
