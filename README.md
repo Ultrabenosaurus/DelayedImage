@@ -94,8 +94,6 @@ The CSS selector for the main containing element.
 ## To Do ##
 
 * Proper testing and compatibility notes
-* Convert to repo?
-* Apply to jQuery plugin repo?
 
 ## License ##
 

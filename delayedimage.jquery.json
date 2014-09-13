@@ -1,0 +1,30 @@
+{
+    "name": "delayedimage",
+    "title": "DelayedImage",
+    "description": "A simple JS tool to compliment responsive sites through delaying the loading of images until you specifically ask for them. Vanilla JS and jQuery versions available.",
+    "keywords": [
+        "image",
+        "responsive",
+        "delay",
+        "vanilla",
+        "hidden"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Dan Bennettt",
+        "url": "http://about.me/d.bennett",
+        "email": "naebeth@googlemail.com?Subject=DelayedImage%20jQuery%20plugin"
+    },
+    "licenses": [
+        {
+            "type": "BSD-3-Clause",
+            "url": "https://github.com/Ultrabenosaurus/DelayedImage/blob/1.0.0/LICENSE.md"
+        }
+    ],
+    "bugs": "https://github.com/Ultrabenosaurus/DelayedImage/issues",
+    "homepage": "https://github.com/Ultrabenosaurus/DelayedImage",
+    "docs": "https://github.com/Ultrabenosaurus/DelayedImage",
+    "dependencies": {
+        "jquery": "~1.11"
+    }
+}
