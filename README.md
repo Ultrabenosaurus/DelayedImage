@@ -53,14 +53,18 @@ This is set no matter whether you use the *Master*, *jQuery* or *Vanilla* versio
 
 *jQuery* mode currently only supports being chained from a jQuery selector call, like so:
 
-```jquery
+```js
 $( '.delayed-image' ).delayed();
 ```
 If you use *jQuery* mode version without first including jQuery in your site, you'll get a pretty error message in your browser's console.
 
 ### Vanilla ###
 
-In *Vanilla* mode, you simply call `delayed()` from somewhere in your code and it'll run using a default CSS selector of `.delayed-image`. If you want to use your own container selector, simply pass a string: `delayed( '.my-container' )`.
+In *Vanilla* mode, you simply call `delayed()` from somewhere in your code and it'll run using a default CSS selector of `.delayed-image`. If you want to use your own container selector, simply pass a string:
+
+```js
+delayed( '.my-container' )
+```
 
 ### Configuration ###
 
